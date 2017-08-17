@@ -11,7 +11,7 @@ Control a remote web page with your tablet or your mobile phone.
     data-isct-server="ws://your.websocket.server" data-isct-token="something"></script>
   ```
 
-1. Open the page on your PC and your mobile phone. Operate on your mobile phone.
+2. Open the page on your PC and your mobile phone. Operate on your mobile phone.
 
 ## Websocket server
 
