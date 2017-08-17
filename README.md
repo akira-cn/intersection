@@ -7,7 +7,7 @@ Control a remote web page with your tablet or your mobile phone.
 1. Put the script at the bottom of the page that you want to control.
 
   ```html
-  <script src="https://s4.ssl.qhres.com/!04a297cf/intersection-1.0.0.js" 
+  <script src="https://s1.ssl.qhres.com/!84babcb9/intersection-1.0.0.js" 
     data-isct-server="ws://your.websocket.server" data-isct-token="something"></script>
   ```
 
