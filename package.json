@@ -1,7 +1,7 @@
 {
   "name": "intersection.js",
   "version": "1.0.0",
-  "description": "Control a remote web page with your tablet or mobile phone.",
+  "description": "Control a remote web page with your tablet or your mobile phone.",
   "main": "lib/index.js",
   "directories": {
     "example": "example"
