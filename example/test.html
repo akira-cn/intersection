@@ -78,6 +78,11 @@ updateBtn.onclick = evt => {
 content.onchange = evt => {
   console.log('change', evt)
 }
+
+const input = document.querySelector('input[type="checkbox"]')
+input.onchange = evt => {
+  console.log('changed')
+}
   </script>
 </body>
 </html>
