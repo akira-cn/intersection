@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>Demo</title>
+  <style>
+#list > li:hover {
+  background-color: black;
+  color: white;
+}
+  </style>
+</head>
+<body>
+<button id="insertBtn">添加行</button>
+<button id="deleteBtn">删除行</button>
+<button id="updateBtn">修改行</button>
+<input id="content" value="内容"></input>
+
+<ul id="list">
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+  <li><label><input type="checkbox"/>内容</label></li>
+</ul>
+  <script src="/js/index.js" data-isct-server="ws://127.0.0.1:8360"></script>
+  <script>
+function getSelectedItems(){
+  return document.querySelectorAll('label input:checked')
+}
+
+function createNewContent(){
+  const row = document.createElement('li')
+  row.innerHTML = `<label><input type="checkbox"/>${content.value}</label>`
+  return row
+}
+
+insertBtn.onclick = evt => {
+  const selectedItems = getSelectedItems();
+
+  if(selectedItems.length){
+    selectedItems.forEach(item => {
+      item.parentNode.parentNode.insertAdjacentElement('afterend',createNewContent())
+    })
+  } else {
+    list.appendChild(createNewContent())
+  }
+}
+
+deleteBtn.onclick = evt => {
+  const selectedItems = getSelectedItems();
+  
+  if(selectedItems.length) {
+    selectedItems.forEach(item => {
+      item.parentNode.parentNode.remove()
+    })
+  }
+}
+
+updateBtn.onclick = evt => {
+  const selectedItems = getSelectedItems();
+  
+  if(selectedItems.length) {
+    selectedItems.forEach(item => {
+      item.parentNode.childNodes[1].textContent = content.value
+    })
+  }  
+}
+
+content.onchange = evt => {
+  console.log('change', evt)
+}
+  </script>
+</body>
+</html>

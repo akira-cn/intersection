@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <title>Demo</title>
+  <style>
+    *{      
+      -webkit-touch-callout: auto; /* prevent callout to copy image, etc when tap to hold */      
+      -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */      
+      -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */       
+      -webkit-user-select:none;
+    }  
+    html,body {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      max-width: 500px;
+    }
+    #ball {
+      position: absolute;
+      left: 200px;
+      top: 100px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: red;
+      transform-origin: 0 100px;
+    }
+    #container {
+      height: 300px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <button id="addBtn">New</button>
+  <button id="removeBtn">Slow Down</button>
+  <input type="text"/>
+  <div id="ball"></div>
+  <a href="http://baidu.com">baidu</a>
+  <div id="container">
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <!--<p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>
+    <p>内容</p>-->
+  </div>
+  <script src="/js/index.js" data-isct-server="ws://127.0.0.1:8360"></script>
+  <script>
+    ball.addEventListener('click', (e) => {
+      console.log('clicked')
+    })
+
+    ball.addEventListener('mousemove', e => {
+      const red = Math.round((e.offsetX / 30) * 255),
+            green = Math.round((e.offsetY / 30) * 255),
+            blue = 255
+
+      ball.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+    })
+    
+    addBtn.onclick = function(){
+      const newEl = document.createElement('p')
+      newEl.innerHTML = '新内容'
+      container.appendChild(newEl)
+    }
+
+    ball.addEventListener('touchstart', e => {
+      console.log(e)
+    })
+  </script>
+</body>
+</html>
